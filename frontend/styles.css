@@ -243,7 +243,15 @@ p {
   }
 }
 
+
+
 .fa-circle-user {
   cursor: pointer;
   font-size: 35px;
+}
+
+#main-logo {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
 }
