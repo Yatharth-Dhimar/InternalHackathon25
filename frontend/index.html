@@ -5,130 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Career & Skill Recommendation Engine</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
   <header class="topbar">
     <div class="container">
       <h1 class="brand">AI Career & Skill Recommendations</h1>
       <nav>
-        <button id="nav-login" class="link-btn">Login</button>
-        <button id="nav-register" class="link-btn">Register</button>
+        <i class="fa-solid fa-circle-user"></i>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <!-- Landing -->
-    <section id="landing" class="card">
-      <div class="col">
-        <h2>Plan your future with AI</h2>
-        <p class="muted">Scholarships, stream & subject guidance, college fit, and job-skill plans — personalised for students.</p>
+<main>
+  <section class="overlay-card">
+    <h2>Plan your future with AI</h2>
+    <p class="muted">Scholarships, stream & subject guidance, college fit, and job-skill plans — personalised for students.</p>
+    <ul class="features">
+      <li>Scholarships after 10th / 12th</li>
+      <li>Stream & college guidance after 10th / 12th</li>
+      <li>Jobs & skills plan after graduation</li>
+      <li>Save and review past suggestions</li>
+    </ul>
 
-        <ul class="features">
-          <li>Scholarships after 10th / 12th</li>
-          <li>Stream & college guidance after 10th / 12th</li>
-          <li>Jobs & skills plan after graduation</li>
-          <li>Save and review past suggestions</li>
-        </ul>
+if
+    <div class="cta">
+      <a href="register.html" class="btn primary">Create account</a>
+      <a href="login.html" class="btn outline">I already have an account</a>
+    </div>
+  
 
-        <div class="cta">
-          <button id="startRegister" class="btn primary">Create account</button>
-          <button id="startLogin" class="btn outline">I already have an account</button>
-        </div>
-      </div>
+</section>
+</main>
 
-      <div class="col illustration">
-        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5d4b2d6c1ad5efb9f0f3f0e8f9f3a0f6" alt="students" />
-      </div>
-    </section>
 
-    <!-- Auth (login / register) -->
-    <section id="auth" class="card hidden">
-      <h2 id="authTitle">Register</h2>
-      <form id="authForm" class="form">
-        <label>Name <input id="name" required /></label>
-        <label>Email <input id="email" type="email" required /></label>
-        <label>Password <input id="password" type="password" required minlength="6" /></label>
-        <label>Education Stage
-          <select id="eduStage">
-            <option value="after10">After 10th</option>
-            <option value="after12">After 12th</option>
-            <option value="afterCollege">After College</option>
-          </select>
-        </label>
-        <div class="form-actions">
-          <button type="submit" class="btn primary">Submit</button>
-          <button type="button" id="authCancel" class="btn outline">Cancel</button>
-        </div>
-      </form>
-    </section>
-
-    <!-- Dashboard -->
-    <section id="dashboard" class="card hidden">
-      <div class="row between center">
-        <h2>Dashboard</h2>
-        <div>
-          <span id="userBadge" class="badge"></span>
-          <button id="logout" class="btn small">Logout</button>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="mini-card">
-          <h3>Scholarships</h3>
-          <p>Find scholarships after 10th / 12th with eligibility & docs.</p>
-          <button class="btn" id="goScholarship">Start</button>
-        </div>
-
-        <div class="mini-card">
-          <h3>Stream & College</h3>
-          <p>Choose stream after 10th / 12th & college-fit guidance.</p>
-          <button class="btn" id="goCareer">Start</button>
-        </div>
-
-        <div class="mini-card">
-          <h3>Jobs & Skills</h3>
-          <p>Job roles & skill roadmap after graduation.</p>
-          <button class="btn" id="goJob">Start</button>
-        </div>
-      </div>
-
-      <hr>
-
-      <h3>Saved suggestions</h3>
-      <div id="savedList"></div>
-    </section>
-
-    <!-- Flow (dynamic form) -->
-    <section id="flow" class="card hidden">
-      <button id="flowBack" class="link-btn">← Back</button>
-      <h2 id="flowTitle">Form</h2>
-
-      <form id="flowForm" class="form">
-        <div id="flowFields"></div>
-        <label>Additional comments (optional)
-          <textarea id="userComment" rows="3" placeholder="Anything else we should know?"></textarea>
-        </label>
-        <div class="form-actions">
-          <button id="submitFlow" type="submit" class="btn primary">Get AI Suggestion</button>
-        </div>
-      </form>
-    </section>
-
-    <!-- Result -->
-    <section id="result" class="card hidden">
-      <button id="resultBack" class="link-btn">← Back</button>
-      <h2>Suggestion</h2>
-      <div id="resultContent" class="resultBox"></div>
-      <div class="resultActions">
-        <button id="saveResult" class="btn">Save</button>
-        <button id="newQuery" class="btn outline">New Query</button>
-      </div>
-    </section>
-
-    <footer class="muted small center" style="margin-top:2rem">Made for hackathon • AI Career & Skill Recommendation Engine</footer>
-  </main>
-
-  <script src="app.js"></script>
+  <footer class="muted small center" style="margin-top:2rem">
+    Made for hackathon • AI Career & Skill Recommendation Engine
+  </footer>
 </body>
 </html>
