@@ -21,9 +21,9 @@ body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;margin:0;ba
 .btn.outline{background:transparent;color:var(--accent);border:1px solid var(--accent)}
 .btn.primary{background:var(--accent)}
 .btn.small{padding:6px 8px;font-size:13px}
-.mini-card{padding:12px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:0 3px 10px rgba(5,10,20,0.04)}
-.grid-3{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
-.form{display:flex;flex-direction:column}
+.mini-card{padding:12px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:0 3px 10px rgba(5,10,20,0.04)}*/
+/* .grid-3{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));} */
+/* .form{display:flex;flex-direction:column}
 .form label{margin-bottom:8px;font-size:14px;color:#111}
 .form input,.form select,.form textarea{padding:8px;border-radius:6px;border:1px solid #e5e7eb}
 .form-actions{margin-top:12px;display:flex;gap:8px}
@@ -107,7 +107,8 @@ main {
 }
 
 .main-content {
-  padding: 3rem 0 0 5rem;
+  padding: 3rem 0 0 10rem;
+  /* border: 2px solid white; */
 }
 
 /* Big central overlay card */
@@ -119,7 +120,7 @@ main {
   max-width: 900px;
   width: 100%;
   background: var(--card);
-  padding: 60px;
+  padding: 45px; /*60px previously*/
   border-radius: 16px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
 }
@@ -266,14 +267,12 @@ p {
 
 #navbar {
   height: 100%;
-  width: 22%;
+  width: 13%;
   /* border: 1px white solid; */
   color: white;
-  background-color: #121212;
+  background-color: #0b1020;
   justify-items: center;
   padding-bottom: 90vh;
-  background-image: url('/pexel.jpg');
-  background-size: contain;
 }
 
 #navbar h3{
@@ -295,4 +294,23 @@ p {
 
 #navbar h3 a:hover {
   color: rgba(255, 255, 255, 1);
+}
+
+.grid-2 {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  /* padding: 0 5 0 0; */
+}
+
+.grid-2 div {
+  background-color: rgba(255, 255, 255, 0.4);
+  color:black;
+  border-radius: 15px;
+  padding: 20px;
+  border: 2px white solid;
+}
+
+.register-card, .login-card, .profile-card{
+  margin: 3rem auto;
 }

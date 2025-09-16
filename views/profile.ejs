@@ -12,21 +12,21 @@
     <div class="container">
       <h1 class="brand">AI Career & Skill Recommendations</h1>
       <nav>
-        <a href="dashboard.html" class="link-btn">Dashboard</a>
-        <a href="login.html" class="link-btn">Logout</a>
+        <a href="/dashboard" class="link-btn">Dashboard</a>
+        <a href="/logging-out" class="link-btn">Logout</a>
       </nav>
     </div>
   </header>
 
   <!-- Main Profile Card -->
   <main>
-    <section class="overlay-card">
+    <section class="overlay-card profile-card">
       <div class="row center between">
         <div>
-          <h2>John Doe</h2>
+          <h2><%=currentAccount.username%></h2>
           <p class="muted">Welcome to your profile page 👋</p>
         </div>
-        <img src="https://ui-avatars.com/api/?name=John+Doe"
+        <img src="https://ui-avatars.com/api/?name=<%=currentAccount.username%>"
              alt="avatar"
              style="width:80px;height:80px;border-radius:50%;object-fit:cover;box-shadow:0 2px 6px rgba(0,0,0,0.2)">
       </div>
@@ -36,15 +36,15 @@
       <div class="grid-3">
         <div class="mini-card">
           <h3>Email</h3>
-          <p>john.doe@example.com</p>
-        </div>
+          <p><%= currentAccount.email %></p>
+        </div> 
         <div class="mini-card">
           <h3>Education Stage</h3>
-          <p>After College</p>
+          <p><%= currentAccount.education %></p>
         </div>
         <div class="mini-card">
           <h3>Joined</h3>
-          <p>September 12, 2025</p>
+          <p><%=currentAccount.date%></p>
         </div>
       </div>
 
