@@ -150,3 +150,10 @@ function localFallback(type,payload){
 window.addEventListener('DOMContentLoaded', ()=>{
   const user = localStorage.getItem('ai_user'); if(user) openDashboard(); else { $('landing').classList.remove('hidden'); }
 });
+
+const getMessage = document.querySelector('#get-message');
+
+getMessage.addEventListener('click', () => {
+  alert('Message was sent!');
+  window.location.href = '/';
+});

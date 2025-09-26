@@ -1,0 +1,276 @@
+:root {
+  --bg: #A7D7C5; /* Light Green */
+  --card: #FFFFFF; /* White */
+  --accent: #FFD700; /* Bright Yellow */
+  --muted: #5A5A5A; /* Dark Gray */
+  --brand-color: #5A5A5A; /* Dark Gray */
+}
+
+/* Reset + base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, Arial;
+  color: #111;
+  /* Use the corrected, direct image URL */
+  background: url("https://images.unsplash.com/photo-1647492190875-9989a5e1c841") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* The subtle overlay is crucial to make your text readable on this background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Topbar */
+.topbar {
+  background: var(--bg); /* Uses the new deep blue */
+  color: var(--muted);
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+}
+.topbar .container {
+  /* No change here, keep your existing Flexbox layout */
+  /* max-width: 1100px; */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+.brand {
+  margin: 0;
+  font-size: 20px;
+  color: var(--brand-color); /* Uses the new muted teal */
+}
+
+/* All other styles remain the same. The changes are focused on colors. */
+
+/* Main layout */
+main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: flex-start;
+  /* min-height: calc(100vh - 64px); */
+  /* padding: 40px 0; */
+}
+
+.main-content {
+  padding: 3rem 0 0 10rem;
+  /* border: 2px solid white; */
+}
+
+/* Big central overlay card */
+.overlay-card,
+.card {
+  /* Your existing styles are here */
+  max-width: 900px;
+  width: 100%;
+  background: var(--card); /* Uses the new card color */
+  padding: 45px;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* Typography adjustments */
+h2 {
+  font-size: 2.4rem;
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: var(--brand-color); /* Uses the new muted teal */
+}
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.features {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+.features li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.cta {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  background: var(--accent); /* Uses the new vibrant orange */
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+.btn.outline {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+.btn.primary {
+  background: var(--accent);
+}
+.btn.small {
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #111;
+}
+.form input,
+.form select,
+.form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 15px;
+  width: 100%;
+}
+.form textarea {
+  resize: vertical;
+}
+.form-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Extra UI elements */
+.badge {
+  background: #eef2ff;
+  color: #003a8c;
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-right: 8px;
+}
+.muted {
+  color: var(--muted);
+}
+.center {
+  text-align: center;
+}
+.small {
+  font-size: 13px;
+}
+.resultBox {
+  white-space: pre-wrap;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #eef2ff;
+}
+.resultActions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  main {
+    padding: 20px;
+  }
+  .overlay-card,
+  .card {
+    padding: 30px;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Your profile icon and navbar styles remain the same */
+.fa-circle-user {
+  cursor: pointer;
+  font-size: 50px;
+}
+
+#main-logo {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+}
+
+#navbar {
+  height: 100%;
+  width: 13%;
+  /* border: 1px white solid; */
+  color: white;
+  background-color: var(--bg); /* Uses the new deep blue */
+  justify-items: center;
+  padding-bottom: 90vh;
+}
+
+#navbar h3{
+  padding: 1.2rem 0;
+  font-size:x-large;
+  cursor: pointer;
+  z-index: 2; 
+}
+
+#navbar img{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+#navbar h3 a{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#navbar h3 a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.grid-2 {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  /* padding: 0 5 0 0; */
+}
+
+.grid-2 div {
+  background-color: rgba(255, 255, 255, 0.4);
+  color:black;
+  border-radius: 15px;
+  padding: 20px;
+  border: 2px white solid;
+}
+
+.register-card, .login-card, .profile-card{
+  margin: 3rem auto;
+}

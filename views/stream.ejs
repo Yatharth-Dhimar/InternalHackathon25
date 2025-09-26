@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stream Selection | AI Career & Skill Recommendation Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="streamstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="full-height">
+    
+    <header class="topbar">
+        <div class="container">
+            <img id="main-logo" src="/logo7.jpeg" alt="logo">
+            <h1 class="brand">AI Career & Skill Recommendations Engine</h1>
+            <nav>
+                <a href="/profile" class="profile-link" style="border-radius: 50%;">
+                    <% if(currentAccount){ %>
+                        <img src="https://ui-avatars.com/api/?name=<%=currentAccount.username%>"
+                            alt="avatar"
+                            class="profile-avatar">
+                    <%} else {%>
+                        <i class="fa-solid fa-circle-user"></i>
+                    <%}%>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-layout">
+        
+        <nav id="navbar">
+            <h3><a href="/">Home</a></h3>      
+            <h3><a href="/dashboard" style="color: white;">Dashboard</a></h3>
+            <h3><a href="/contactus">Contact Us</a></h3>
+        </nav>
+
+        <div class="main-content">
+            
+            <% if (education) { %>
+                
+                <div class="card stream-header" style="max-width: 900px; margin: 3rem auto;">
+                    <h2>Choose Your Academic Stream</h2>
+                    <p class="muted">
+                        Based on your interests, the AI has provided these recommended streams. Select one to proceed.
+                    </p>
+                </div>
+
+                <form class="stream-form" action="/select-stream" method="POST">
+                    <input type="hidden" name="education" value="<%= education %>">
+
+                    <div class="grid-3 stream-grid" style="max-width: 900px; margin: 20px auto;">
+                        
+                        <% 
+                        // CRITICAL SAFETY CHECK: Use the if condition to ensure streams is a valid array
+                        if (typeof streams !== 'undefined' && Array.isArray(streams) && streams.length > 0) {
+                            streams.forEach((stream) => { 
+                                // Internal check for bad data (undefined elements in the array)
+                                if (!stream || !stream.name) return;
+                        %>
+                            <div class="mini-card">
+                                <label class="stream-option" for="<%= stream.name.toLowerCase().replace(/[^a-z0-9]/g, '-') %>">
+                                    <input 
+                                        type="radio" 
+                                        id="<%= stream.name.toLowerCase().replace(/[^a-z0-9]/g, '-') %>" 
+                                        name="selectedStream" 
+                                        value="<%= stream.name %>" 
+                                        required
+                                        class="hidden-radio"
+                                    >
+                                    <div class="stream-content">
+                                        <i class="fa-solid <%= stream.icon %> stream-icon"></i>
+                                        <h3><%= stream.name %></h3>
+                                        <p class="small muted"><%= stream.description %></p>
+                                    </div>
+                                </label>
+                            </div>   
+                                
+                            
+                            <% }); 
+                        } else { %>
+                            <p class="muted center" style="grid-column: 1 / -1;">
+                                No streams could be loaded. Please ensure the server is passing stream data correctly.
+                            </p>
+                        <% } %>
+                        
+                    </div>
+                    <div class="center" style="margin-top: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                        <button type="button" class="btn outline small" onclick="alert('This button would trigger an API call to load more stream options.')">
+                            Load More Specialized Streams
+                        </button>
+                    </div>
+
+                    <div class="form-actions cta center" style="margin-top: 30px; padding: 20px 0;">
+                        <button type="submit" class="btn primary btn-large">Confirm Stream & Continue</button>
+                    </div>
+                </form>
+
+            <% } else { %>
+                <div class="card skip-card center-content" style="max-width: 600px; margin: 3rem auto;">
+                    <h2>Stream Selection Complete</h2>
+                    <p class="muted">
+                        Since you have completed **<%= education %>**, stream selection is not needed. We'll now move directly to recommending college courses and career skills.
+                    </p>
+                    <div class="form-actions cta">
+                        <a href="/course-selection" class="btn primary">Proceed to Course Selection</a>
+                    </div>
+                </div>
+            <% } %>
+
+        </div>
+    </main>
+
+</body>
+</html>

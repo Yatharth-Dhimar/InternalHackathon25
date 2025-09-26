@@ -1,39 +1,3 @@
-/* :root{
-  --bg:#f5f7fb; --card:#ffffff; --accent:#0066ff; --muted:#6b7280;
-}
-*{box-sizing:border-box}
-body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;margin:0;background:var(--bg);color:#111}
-.container{max-width:980px;margin:0 auto;padding:24px}
-.topbar{background:#0b1020;color:#fff}
-.topbar .container{display:flex;align-items:center;justify-content:space-between}
-.brand{margin:0;font-size:18px}
-.link-btn{background:transparent;border:0;color:#fff;cursor:pointer;padding:8px}
-.card{background:var(--card);padding:20px;border-radius:10px;margin-top:18px;box-shadow:0 6px 18px rgba(20,20,40,0.06)}
-.row{display:flex}
-.row.center{align-items:center}
-.row.between{justify-content:space-between}
-.hidden{display:none}
-.col{flex:1}
-.illustration img{max-width:100%;border-radius:8px}
-.features{list-style:disc;margin-left:18px;color:var(--muted)}
-.cta{margin-top:14px}
-.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
-.btn.outline{background:transparent;color:var(--accent);border:1px solid var(--accent)}
-.btn.primary{background:var(--accent)}
-.btn.small{padding:6px 8px;font-size:13px}
-.mini-card{padding:12px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:0 3px 10px rgba(5,10,20,0.04)}*/
-/* .grid-3{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));} */
-/* .form{display:flex;flex-direction:column}
-.form label{margin-bottom:8px;font-size:14px;color:#111}
-.form input,.form select,.form textarea{padding:8px;border-radius:6px;border:1px solid #e5e7eb}
-.form-actions{margin-top:12px;display:flex;gap:8px}
-.badge{background:#eef2ff;color:#003a8c;padding:6px 8px;border-radius:999px;margin-right:8px}
-.muted{color:var(--muted)}
-.center{text-align:center}
-.small{font-size:13px}
-.resultBox{white-space:pre-wrap;padding:12px;background:#f8fafc;border-radius:8px;border:1px solid #eef2ff}
-.resultActions{margin-top:12px;display:flex;gap:8px}
-@media (max-width:640px){.topbar .container{flex-direction:column;gap:8px}.grid-3{grid-template-columns:1fr}} */
 
 :root {
   --bg: #f5f7fb;
@@ -42,7 +6,6 @@ body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;margin:0;ba
   --muted: #6b7280;
 }
 
-/* Reset + base */
 * {
   box-sizing: border-box;
 }
@@ -81,6 +44,7 @@ body::before {
   justify-content:space-between;
   padding: 16px 24px;
 }
+
 .brand {
   margin: 0;
   font-size: 20px;
@@ -110,6 +74,17 @@ main {
   padding: 3rem 0 0 10rem;
   /* border: 2px solid white; */
 }
+
+.main-content section {
+  border: 1px solid white;
+  background-color:rgba(255, 255, 255, 0.65);
+}
+
+#idx-features {
+  color: black;
+}
+
+
 
 /* Big central overlay card */
 .overlay-card,
@@ -311,6 +286,101 @@ p {
   border: 2px white solid;
 }
 
-.register-card, .login-card, .profile-card{
+.register-card, .login-card, .profile-card, #education-card{
   margin: 3rem auto;
+}
+
+
+
+
+
+/* --- New Styles for Contact Page --- */
+
+/* Utility to center the content horizontally on the contact page */
+.main-content.center-content {
+    /* To center content, we use margin auto and a max-width */
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding-left: 20px; /* Adjust padding for better look next to navbar */
+    padding-right: 20px;
+}
+
+.contact-card {
+    /* Ensure the card doesn't get too wide on large screens */
+    max-width: 600px;
+    width: 100%;
+    margin-top: 3rem; /* Add top margin to separate it from the top */
+}
+
+/* Adjust the optional contact info boxes */
+.contact-info {
+    max-width: 600px;
+    width: 100%;
+    /* Use the grid-2 class for two columns, but make the card itself transparent/minimal */
+    background: transparent; 
+    box-shadow: none;
+    padding: 20px 0; /* Remove top/bottom card padding */
+}
+
+.contact-info div {
+    /* Overrides the background color set in .grid-2 div for better contrast */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+}
+
+.contact-info h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* --- New Styles for Contact Page --- */
+
+/* Utility to center the content horizontally on the contact page */
+.main-content.center-content {
+    /* To center content, we use margin auto and a max-width */
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding-left: 20px; /* Adjust padding for better look next to navbar */
+    padding-right: 20px;
+}
+
+.contact-card {
+    /* Ensure the card doesn't get too wide on large screens */
+    max-width: 600px;
+    width: 100%;
+    margin-top: 3rem; /* Add top margin to separate it from the top */
+}
+
+/* Adjust the optional contact info boxes */
+.contact-info {
+    max-width: 600px;
+    width: 100%;
+    /* Use the grid-2 class for two columns, but make the card itself transparent/minimal */
+    background: transparent; 
+    box-shadow: none;
+    padding: 20px 0; /* Remove top/bottom card padding */
+}
+
+.contact-info div {
+    /* Overrides the background color set in .grid-2 div for better contrast */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+}
+
+#contactus-card {
+  margin: -2rem auto;
+}
+
+#contactus-card .contact-card{
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+/* Specific style for the education selection card */
+.education-card {
+    /* Ensure the card doesn't get too wide, maximizing readability for forms */
+    max-width: 600px; 
+    width: 100%;
 }

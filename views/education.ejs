@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Education Level | AI Career & Skill Recommendation Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="full-height">
+    
+    <header class="topbar">
+        <div class="container">
+            <img id="main-logo" src="/logo7.jpeg" alt="logo">
+            <h1 class="brand">AI Career & Skill Recommendations Engine</h1>
+            <nav>
+                <a href="/profile" class="profile-link" style="color: white;">
+                    <% if(currentAccount){ %>
+                        <img src="https://ui-avatars.com/api/?name=<%=currentAccount.username%>"
+                            alt="avatar"
+                            class="profile-avatar">
+                    <%} else {%>
+                        <i class="fa-solid fa-circle-user"></i>
+                    <%}%>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-layout">
+        
+        <nav id="navbar">
+            <h3><a href="/" style="text-decoration: none;">Home</a></h3>      
+            <h3><a href="/dashboard" style="color: white;text-decoration: none;">Dashboard</a></h3>
+            <h3><a href="/contactus" style="text-decoration: none;">Contact Us</a></h3>
+        </nav>
+
+        <div class="main-content center-content" id="education-card">
+            
+            <div class="card education-card">
+                <h2>What is your highest level of education completed?</h2>
+                <p class="muted" style="color:black">
+                    This helps us tailor recommendations for scholarships, streams, and career paths precisely for you.
+                </p>
+
+                <form class="form" action="/stream" method="POST">
+                    
+                    <label for="education-level">Select Education Level</label>
+                    <select id="education-level" name="education" required>
+                        <option value="" disabled selected>-- Select an option --</option>
+                        <option value="10th">10th</option>
+                        <option value="12th">12th</option>
+                        <option value="graduation">Graduate</option>
+                    </select>
+
+                    <div class="form-actions cta">
+                        <button type="submit" class="btn primary">Continue</button>
+                    </div>
+                </form>
+            </div>
+            
+            
+
+        </div>
+    </main>
+
+</body>
+</html>

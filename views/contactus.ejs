@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us | AI Career & Skill Recommendation Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="full-height">
+    
+    <header class="topbar">
+        <div class="container">
+            <img id="main-logo" src="/logo7.jpeg" alt="logo">
+            <h1 class="brand">AI Career & Skill Recommendations Engine</h1>
+            <nav>
+        <a href="/profile" style="text-decoration: none; color: white">
+          <% if(currentAccount){ %>
+            <img src="https://ui-avatars.com/api/?name=<%=currentAccount.username%>"
+             alt="avatar"
+             style="width:50px;height:50px;border-radius:50%;cursor:pointer;">
+          <%} else {%>
+          <i class="fa-solid fa-circle-user"></i>
+          <%}%>
+          </a>
+      </nav>
+        </div>
+    </header>
+
+    <main class="main-layout">
+        
+        <nav id="navbar">
+            <h3><a href="/" style="text-decoration: none;">Home</a></h3>      
+            <h3><a href="/dashboard" style="text-decoration: none;">Dashboard</a></h3>
+            <h3><a href="/contactus" style="color: white;text-decoration: none;">Contact Us</a></h3>
+        </nav>
+
+        <div class="main-content center-content" id="contactus-card">
+            
+            <div class="card contact-card">
+                <h2>Get in Touch</h2>
+                <p class="muted" style="color: black;">
+                    We'd love to hear from you! Send us a message about feedback, support, or partnership inquiries.
+                </p>
+
+                <form class="form" id="send-message" method="POST" action="/">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject">
+                        <option value="feedback">General Feedback</option>
+                        <option value="support">Technical Support</option>
+                        <option value="partnership">Partnership Inquiry</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+
+                    <div class="form-actions">
+                        <button class="btn primary">Send Message</button>
+                        <button type="reset" class="btn outline">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card grid-2 contact-info">
+                <div>
+                    <h4>Email Support</h4>
+                    <p class="small">support@aicareerengine.com</p>
+                </div>
+                <div>
+                    <h4>Technical Help</h4>
+                    <p class="small">Contact us for any technical issues or bug reports.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

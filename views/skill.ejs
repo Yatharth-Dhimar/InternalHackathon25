@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Education Level | AI Career & Skill Recommendation Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="full-height">
+    
+    <header class="topbar">
+        <div class="container">
+            <img id="main-logo" src="/logo7.jpeg" alt="logo">
+            <h1 class="brand">AI Career & Skill Recommendations Engine</h1>
+            <nav>
+                <a href="/profile" class="profile-link" style="color: white;">
+                    <% if(currentAccount){ %>
+                        <img src="https://ui-avatars.com/api/?name=<%=currentAccount.username%>"
+                            alt="avatar"
+                            class="profile-avatar">
+                    <%} else {%>
+                        <i class="fa-solid fa-circle-user"></i>
+                    <%}%>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-layout">
+        
+        <nav id="navbar">
+            <h3><a href="/" style="text-decoration: none;">Home</a></h3>      
+            <h3><a href="/dashboard" style="color: white;text-decoration: none;">Dashboard</a></h3>
+            <h3><a href="/contactus" style="text-decoration: none;">Contact Us</a></h3>
+        </nav>
+
+        <div class="main-content center-content" id="education-card">
+            
+            <div class="card education-card">
+                <h2>What are your technical skills</h2>
+                <p class="muted" style="color:black">
+                    This helps us tailor recommendations for scholarships, streams, and career paths precisely for you.
+                </p>
+
+                <form class="form" action="/career" method="POST">
+                    
+                    <label for="education-level">Give list of your skills</label>
+                    <input name="skills" required>
+
+                    <div class="form-actions cta">
+                        <button type="submit" class="btn primary">Continue</button>
+                    </div>
+                </form>
+            </div>
+            
+            
+
+        </div>
+    </main>
+
+</body>
+</html>

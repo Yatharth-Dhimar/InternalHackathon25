@@ -1,0 +1,93 @@
+/* --- STREAM SELECTION PAGE STYLES --- */
+
+/* Defines a 3-column grid for the stream options */
+.grid-3 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+}
+
+/* Style for the individual stream selection card (label wrapper) */
+.stream-option {
+    /* Makes the entire card clickable */
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    
+    /* Base styling inherited from card principles */
+    border: 2px solid transparent; /* Use transparent border initially for 'unselected' look */
+    border-radius: 12px;
+    padding: 25px;
+    background: var(--card); /* Uses the --card variable (white) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    position: relative; 
+}
+
+/* Hover effect */
+.stream-option:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    border-color: #e5e7eb; /* Subtle gray border on hover */
+}
+
+/* Hide the actual radio button that provides the selection state */
+.hidden-radio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Style for the content div *inside* the label */
+.stream-content {
+    border-radius: 8px;
+    padding: 10px;
+    transition: border 0.2s;
+    height: 100%; 
+}
+
+/* CRITICAL: Style when the radio button is checked/selected */
+.hidden-radio:checked + .stream-content {
+    /* High visibility border using the accent color */
+    border: 3px solid var(--accent); 
+    /* Light accent background for selected state */
+    background: #eef2ff; 
+}
+
+/* Icon Styling */
+.stream-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+/* Typography Adjustments */
+.stream-content h3 {
+    margin: 5px 0 10px 0;
+    font-size: 1.3rem;
+    color: #111;
+}
+
+.stream-content p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--muted);
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+/* Responsive adjustments for the stream grid */
+@media (max-width: 900px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+@media (max-width: 640px) {
+    .grid-3 {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}

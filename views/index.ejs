@@ -19,8 +19,9 @@
              alt="avatar"
              style="width:50px;height:50px;border-radius:50%;cursor:pointer;">
           <%} else {%>
-          <i class="fa-solid fa-circle-user"></i></a>
+          <i class="fa-solid fa-circle-user"></i>
           <%}%>
+          </a>
       </nav>
     </div>
   </header>
@@ -32,17 +33,17 @@
     <!-- <img src="/pexel.jpg" alt=""> -->
     <h3><a href="/" style="text-decoration: none;">Home</a></h3>    
     <h3><a href="/dashboard" style="text-decoration: none;">Dashboard</a></h3>
-    <h3><a href="/aboutus" style="text-decoration: none;">About Us</a></h3>
+    <h3><a href="/contactus" style="text-decoration: none;">Contact Us</a></h3>
   </nav>
   <div class="main-content">
     <section class="overlay-card">
     <h2>Plan your future with AI</h2>
-    <p class="muted">Scholarships, stream & subject guidance, college fit, and job-skill plans — personalised for students.</p>
-    <ul class="features">
+    <p class="muted" style="color: black;">Scholarships, stream & subject guidance, college fit, and job-skill plans — personalised for students.</p>
+    <ul class="features" id="idx-features">
       <li>Scholarships after 10th / 12th</li>
       <li>Stream & college guidance after 10th / 12th</li>
       <li>Jobs & skills plan after graduation</li>
-      <li>Save and review past suggestions</li>
+      <!-- <li>Save and review past suggestions</li> -->
     </ul>
 
     <%if(!currentAccount){%>
